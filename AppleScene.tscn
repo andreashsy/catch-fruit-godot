@@ -9,7 +9,7 @@ height = 6.0
 [node name="AppleScene" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2( 197, 68 )
+position = Vector2( 2, 3 )
 __meta__ = {
 "_edit_group_": true
 }
