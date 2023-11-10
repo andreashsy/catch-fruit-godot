@@ -27,7 +27,8 @@ expand = true
 stretch_mode = 2
 
 [node name="Basket" type="KinematicBody2D" parent="."]
-position = Vector2( 474, 562 )
+position = Vector2( 476, 543 )
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
