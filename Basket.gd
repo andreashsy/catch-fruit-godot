@@ -6,7 +6,7 @@ var score = 0
 func _ready():
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.x = -300
 	elif Input.is_action_pressed("ui_right"):
