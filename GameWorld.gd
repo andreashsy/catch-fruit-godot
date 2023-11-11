@@ -33,7 +33,7 @@ func _on_Area2D_body_entered(body):
 		game_over()
 
 func game_over():
-	show_message("Game Over!")
+	show_message("Game Over!\n Your score: " + str(score))
 
 func show_message(text):
 	$Message.text = text
