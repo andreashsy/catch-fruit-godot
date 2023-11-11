@@ -1,6 +1,6 @@
 extends Node2D
 
-var lives = 1
+var lives = 3
 var score = 0
 var apple = preload("res://AppleScene.tscn")
 var ice_cream = preload("res://IceCreamScene.tscn")
