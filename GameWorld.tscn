@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/Background_Blue.png" type="Texture" id=1]
 [ext_resource path="res://assets/Basket.png" type="Texture" id=2]
 [ext_resource path="res://Basket.gd" type="Script" id=3]
 [ext_resource path="res://GameWorld.gd" type="Script" id=4]
 [ext_resource path="res://assets/Kenney Future_Font.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/Sound_collect.ogg" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.5, 12.5 )
@@ -60,6 +61,9 @@ custom_fonts/font = SubResource( 3 )
 text = "Score:"
 align = 1
 valign = 1
+
+[node name="AudioCollectFruit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="body_entered" from="Basket/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
