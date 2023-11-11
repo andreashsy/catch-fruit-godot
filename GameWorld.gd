@@ -1,6 +1,6 @@
 extends Node2D
 
-var lives = 3
+var lives = 1
 var score = 0
 var apple = preload("res://AppleScene.tscn")
 var ice_cream = preload("res://IceCreamScene.tscn")
@@ -34,6 +34,9 @@ func _on_Area2D_body_entered(body):
 
 func game_over():
 	show_message("Game Over!\n Your score: " + str(score))
+	
+	$Timer.stop()
+	get_tree().call_group("drops", "queue_free")
 
 func show_message(text):
 	$Message.text = text
