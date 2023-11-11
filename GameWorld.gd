@@ -1,5 +1,6 @@
 extends Node2D
 
+var lives = 3
 var score = 0
 var apple = preload("res://AppleScene.tscn")
 var ice_cream = preload("res://IceCreamScene.tscn")
@@ -17,8 +18,9 @@ func _on_Timer_timeout():
 	
 	add_child(random_fruit_instance)
 
-func _on_Area2D_body_entered(body):	
-	score += 1
-	get_node("ScoreLabel").text = "Score: " + str(score)
-	get_node("AudioCollectFruit").play()
+func _on_Area2D_body_entered(body):
+	if body.name == "Apple":
+		score += 1
+		get_node("ScoreLabel").text = "Score: " + str(score)
+		get_node("AudioCollectFruit").play()
 	body.queue_free()
