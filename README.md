@@ -1,4 +1,4 @@
-#Catch Fruit Game
+# Catch Fruit Game
 Catch the fruits and dodge the ice creams!    
 
 Simple game to try developing in Godot.
