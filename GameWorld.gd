@@ -21,6 +21,16 @@ func _on_Timer_timeout():
 func _on_Area2D_body_entered(body):
 	if body.name == "Apple":
 		score += 1
-		get_node("ScoreLabel").text = "Score: " + str(score)
-		get_node("AudioCollectFruit").play()
+		$ScoreLabel.text = "Score: " + str(score)
+		$AudioCollectFruit.play()
+	elif body.name == "IceCream":
+		lives -= 1
+		$LivesLabel.text = "Lives: " + str(lives)
+		$AudioError.play()
 	body.queue_free()
+	
+	if lives <= 0:
+		_game_over()
+
+func _game_over():
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/Background_Blue.png" type="Texture" id=1]
 [ext_resource path="res://assets/Basket.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://GameWorld.gd" type="Script" id=4]
 [ext_resource path="res://assets/Kenney Future_Font.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/Sound_collect.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/Sound_error.ogg" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.5, 12.5 )
@@ -19,6 +20,10 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
 font_data = ExtResource( 5 )
 
 [node name="GameWorld" type="Node2D"]
@@ -77,6 +82,17 @@ margin_bottom = 57.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "LIVES: 3"
+
+[node name="AudioError" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="Message" type="Label" parent="."]
+margin_left = 205.0
+margin_top = 223.0
+margin_right = 779.0
+margin_bottom = 295.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
 
 [connection signal="body_entered" from="Basket/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
