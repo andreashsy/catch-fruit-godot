@@ -71,9 +71,6 @@ text = "Score: 0"
 align = 1
 valign = 1
 
-[node name="AudioCollectFruit" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-
 [node name="LivesLabel" type="Label" parent="."]
 margin_left = 831.0
 margin_top = 21.0
@@ -83,9 +80,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "LIVES: 3"
 
-[node name="AudioError" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 7 )
-
 [node name="Message" type="Label" parent="."]
 margin_left = 205.0
 margin_top = 223.0
@@ -93,6 +87,12 @@ margin_right = 779.0
 margin_bottom = 295.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
+
+[node name="AudioCollectFruit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="AudioError" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
 
 [connection signal="body_entered" from="Basket/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
