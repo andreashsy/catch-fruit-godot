@@ -30,7 +30,11 @@ func _on_Area2D_body_entered(body):
 	body.queue_free()
 	
 	if lives <= 0:
-		_game_over()
+		game_over()
 
-func _game_over():
-	pass
+func game_over():
+	show_message("Game Over!")
+
+func show_message(text):
+	$Message.text = text
+	$Message.show()
