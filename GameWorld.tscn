@@ -90,8 +90,10 @@ custom_fonts/font = SubResource( 5 )
 
 [node name="AudioCollectFruit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+volume_db = -1.0
 
 [node name="AudioError" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource( 7 )
 
 [connection signal="body_entered" from="Basket/Area2D" to="." method="_on_Area2D_body_entered"]
